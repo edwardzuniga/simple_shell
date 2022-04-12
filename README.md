@@ -136,5 +136,5 @@ hsh main.c shell.c test_ls_2
 $
 
 ## Authors:
-- [Valentina Zapata](https://github.com/ "Valentina Zapata") - [@Zapata9664](https://twitter.com/Zapata9664 "@Zapata9664")
+- [Valentina Zapata](https://github.com/Zapata9664 "Valentina Zapata") - [@Zapata9664](https://twitter.com/Zapata9664 "@Zapata9664")
 - [Eduardo Zúñiga](https://github.com/edwardzuniga/ "Eduardo Zúñiga") - [@eduzunigapro](https://twitter.com/eduzunigapro "@eduzunigapro")
