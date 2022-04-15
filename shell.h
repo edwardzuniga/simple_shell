@@ -9,13 +9,6 @@
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void free_token(char **tokens);
 char *strcpy(char *dest, const char *src);
-
-typedef struct search
-{
-    char *mainComand;
-    char *secondCommand;
-} search;
-
-search tokenizer(char *string, const char *delim);
+char **tokenizer(char *string, const char *delim);
 
 #endif

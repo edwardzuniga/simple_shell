@@ -6,17 +6,21 @@
  *
  */
 
-search tokenizer(char *string, const char *delim)
+char **tokenizer(char *string, const char *delim)
 {
     char *token;
-    token = strtok(string, " ");
-    search command;
-    strcpy(command.mainComand, token); 
+    char **tokenOne;
+    int i = 1;
 
-    token = strtok(NULL, " ");
-    printf("llegue");
+    tokenOne = (char **)malloc(100);
 
-    strcpy(command.secondCommand, token);
-    printf("llegue");
-    return (command);
+    token = strtok(string, delim);
+    tokenOne[0] = token;
+    while (token != NULL)
+    {
+        token = strtok(NULL, delim);
+        tokenOne[i] = token;
+        i++;
+    }
+    return (tokenOne);
 }
