@@ -10,5 +10,6 @@ ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void free_token(char **tokens);
 char *strcpy(char *dest, const char *src);
 char **tokenizer(char *string, const char *delim);
+void execve_funtion(char *argv[]);
 
 #endif
