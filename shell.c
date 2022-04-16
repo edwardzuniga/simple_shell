@@ -6,14 +6,16 @@
  *
  */
 
-int main(void)
+int main()
+
 {
     char *string;
     size_t size = 10;
 
     bool thruty;
     char **stringptr;
-    char *token[2];
+    char **token;
+    int i = 0;
 
     thruty = true;
     stringptr = &string;
@@ -21,10 +23,15 @@ int main(void)
 
     while (thruty)
     {
+        i = 0;
         printf("cisfun$");
         getline(stringptr, &size, stdin);
         token = tokenizer(string, " ");
-        execve_funtion(token);
+        while (token[i] != NULL)
+        {
+            printf("%s\n", token[i]);
+            i++;  
+        }
         free(token);
     }
     free(string);

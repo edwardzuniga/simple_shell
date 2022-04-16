@@ -9,9 +9,10 @@
 char **tokenizer(char *string, const char *delim)
 {
     char *token;
-    char *tokenOne[20];
+    char **tokenOne;
     int i = 1;
 
+    tokenOne = (char **)malloc(100);
 
     token = strtok(string, delim);
     tokenOne[0] = token;
