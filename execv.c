@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * run_command - execute the command
+ * run_com - execute the command
  *@arg: concatenate of the strings and path
  *@av: program
  *@env: environment
