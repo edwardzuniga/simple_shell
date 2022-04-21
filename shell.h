@@ -12,7 +12,7 @@
 
 
 char *enter_line(void);
-char **tokenizer(char *lineptr);
+char **tokenizer(char *string);
 char *find_path(char **env);
 int _putchar(char c);
 int tokenizer_path(char **arg, char **env);
