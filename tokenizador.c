@@ -1,26 +1,39 @@
 #include "shell.h"
 
+
 /**
- * @brief
+ * tokenizer - split the string you input
+ * @string: line of stdin
  *
- *
+ * Return: double pointer of the split commands
  */
 
-char **tokenizer(char *string, const char *delim)
+char **tokenizer(char *string)
 {
-    char *token;
-    char **tokenOne;
-    int i = 1;
+	char **command = NULL;
+	char *token = NULL;
+	size_t i = 0;
+	int size = 0;
 
-    tokenOne = (char **)malloc(100);
+	if (string == NULL)
+		return (NULL);
 
-    token = strtok(string, delim);
-    tokenOne[0] = token;
-    while (token != NULL)
-    {
-        token = strtok(NULL, delim);
-        tokenOne[i] = token;
-        i++;
-    }
-    return (tokenOne);
+	for (i = 0; string[i]; i++)
+	{
+	if (string[i] == ' ')
+		size++;
+	}
+	if ((size + 1) == _strlen(string))
+		return (NULL);
+	command = malloc(sizeof(char *) * (size + 2));
+	if (command == NULL)
+		return (NULL);
+	token = strtok(string, " \n\t");
+	for (i = 0; token != NULL; i++)
+	{
+	command[i] = token;
+	token = strtok(NULL, " \n\t");
+	}
+	command[i] = NULL;
+			return (command);
 }

@@ -1,40 +1,24 @@
 #include "shell.h"
 
 /**
- * @brief
+ * enter_line - read line for the keyboard
  *
- *
+ * Return: entering in line
  */
 
-int main()
-
+char *enter_line(void)
 {
-    char *string;
-    size_t size = 10;
 
-    bool thruty;
-    char **stringptr;
-    char **token;
-    int i = 0;
+	char *string = NULL;
+	size_t user = 0;
 
-    thruty = true;
-    stringptr = &string;
-    string = (char *)malloc(size);
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "cisfun$ ", 14);
 
-    while (thruty)
-    {
-        i = 0;
-        printf("cisfun$");
-        getline(stringptr, &size, stdin);
-        token = tokenizer(string, " ");
-        while (token[i] != NULL)
-        {
-            printf("%s\n", token[i]);
-            i++;  
-        }
-        free(token);
-    }
-    free(string);
-
-    return (0);
+	if (getline(&string, &user, stdin) == -1)
+	{
+		free(string);
+		return (NULL);
+	}
+	return (string);
 }
