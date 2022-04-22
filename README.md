@@ -58,6 +58,7 @@ $
 | shell.h  | Header file with the prototypes  |
 |  token_path.c | Function for split the  path  |
 | tokenizador.c  |  Function that splits the string entered by the user |
+| man_1_simple_shell  |  file containing the shell man |
 
 ## Steps to use the Shell
 
