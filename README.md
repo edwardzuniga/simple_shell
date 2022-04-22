@@ -1,5 +1,5 @@
 ![](https://cdn-website.partechpartners.com/media/images/Holberton_School_Logo.original.png)
-# 0x16. C - Simple Shell :tw-2611:
+# 0x16. C - Simple Shell 
 
 ## Background Context
 Write a simple UNIX command interpreter.
