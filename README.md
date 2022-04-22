@@ -1,53 +1,16 @@
-# 0x16. C - Simple Shell
+![](https://cdn-website.partechpartners.com/media/images/Holberton_School_Logo.original.png)
+# 0x16. C - Simple Shell :tw-2611:
 
 ## Background Context
 Write a simple UNIX command interpreter.
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
 ^ “The Gates of Shell”, by [Spencer Cheng](https://twitter.com/spencerhcheng/status/855104635069054977 "Spencer Cheng"), featuring [Julien Barbier](https://twitter.com/julienbarbier42 "Julien Barbier")
+## Presentation
 
-### Resources
-**Read or watch:**
+This is collaborative project made by Valentina Zapata and Eduardo Zúñiga, students of Software Engineering at Holberton School. This repository contains the files for Holberton's simple_shell project. It consists of developing and making our own UNIX command interpreter (Shell).
 
-- [Unix shell](https://en.wikipedia.org/wiki/Unix_shell "Unix shell")
-- [Thompson shell](https://en.wikipedia.org/wiki/Thompson_shell "Thompson shell")
-- [Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson "Ken Thompson")
-- Everything you need to know to start coding your own shell concept page
+It's a recreation of the `sh` shell a command line interpreter, this program has the exact same output as `sh` `(/bin/sh)` as well as the exact same error output.
 
-**man or help:**
-- `sh` (Run `sh` as well)
-
-### Learning Objectives
-
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
-#### General
-
-- Who designed and implemented the original Unix operating system
-- Who wrote the first version of the UNIX shell
-- Who invented the B programming language (the direct predecessor to the C programming language)
-- Who is Ken Thompson
-- How does a shell work
-- What is a pid and a ppid
-- How to manipulate the environment of the current process
-- What is the difference between a function and a system call
-- How to create processes
-- What are the three prototypes of main
-- How does the shell use the PATH to find the programs
-- How to execute another program with the execve system call
-- How to suspend the execution of a process until one of its children terminates
-- What is EOF / “end-of-file”?
-
-### Requirements
-
-#### General
-- Allowed editors: vi, vim, emacs
-- All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-- All your files should end with a new line
-- A README.md file, at the root of the folder of the project is mandatory
-- Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-- Your shell should not have any memory leaks
-- No more than 5 functions per file
-- All your header files should be include guarded
-- Use system calls only when you need to (why?)
 ### GitHub
 **There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.**
 
@@ -72,47 +35,47 @@ $ echo "qwerty" | ./././hsh
 ./././hsh: 1: qwerty: not found
 $
 
-### List of allowed functions and system calls
-- `access` (man 2 access)
-- `chdir` (man 2 chdir)
-- `close` (man 2 close)
-- `closedir` (man 3 closedir)
-- `execve` (man 2 execve)
-- `exit` (man 3 exit)
-- `_exit` (man 2 _exit)
-- `fflush` (man 3 fflush)
-- `fork` (man 2 fork)
-- `free` (man 3 free)
-- `getcwd` (man 3 getcwd)
-- `getline` (man 3 getline)
-- `getpid` (man 2 getpid)
-- `isatty` (man 3 isatty)
-- `kill` (man 2 kill)
-- `malloc` (man 3 malloc)
-- `open` (man 2 open)
-- `opendir` (man 3 opendir)
-- `perror` (man 3 perror)
-- `read` (man 2 read)
-- `readdir` (man 3 readdir)
-- `signal` (man 2 signal)
-- `stat` (__xstat) (man 2 stat)
-- `lstat` (__lxstat) (man 2 lstat)
-- `fstat` (__fxstat) (man 2 fstat)
-- `strtok` (man 3 strtok)
-- `wait` (man 2 wait)
-- `waitpid` (man 2 waitpid)
-- `wait3` (man 2 wait3)
-- `wait4` (man 2 wait4)
-- `write` (man 2 write)
 
-### Compilation
-Your shell will be compiled this way:
 
->gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
-### Testing
+## Files Description
+| File  | Description  |
+| ------------ | ------------ |
+|  AUTHORS | Contains the authors of the project  |
+|  _getenv.c |  Contains the function that looks up the environment |
+|  _putchar.c |  Contains the function that writes the character c to stdout |
+| _strcat.c  | Contains the function that concatenates two strings  |
+| _strcmp.c  | Contains the function that compares two strings  |
+|_strcpy.c   | Contains the function that copies two strings  |
+|  _strlen.c| Contains the function calculates the length of a given string  |
+| _strncomp.c  |  Contains the function that compares the characters of two strings |
+| execv.c |  Function that executes shell commands |
+| exit.c  | Function to close the shell process  |
+| length.c  |  Function that check equals character|
+|  main.c |  Main arguments functions |
+| path.c  | Function that find the path in the environment  |
+| shell.c  |  read line for the keyboard |
+| shell.h  | Header file with the prototypes  |
+|  token_path.c | Function for split the  path  |
+| tokenizador.c  |  Function that splits the string entered by the user |
 
-Your shell should work like this in interactive mode:
+## Steps to use the Shell
+
+###1. Clone the repository
+
+`$ git clone https://github.com/edwardzuniga/simple_shell.git`
+
+### 2. Change directory to simple_shell
+
+`$ cd simple_shell/`
+
+### 3. Compile all the .c files in /simple_shell
+
+`gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+
+### Usage
+
+**Use in interactive mode:**
 
 >$ ./hsh
 ($) /bin/ls
@@ -121,7 +84,7 @@ hsh main.c shell.c
 ($) exit
 $
 
-But also in non-interactive mode:
+**Use in non-interactive mode:**
 
 >$ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
@@ -135,6 +98,24 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 
+### Man page
+
+**For further information please refer to the man page - accessed in terminal with:**
+
+`man -l man_1_simple_shell`
+
+### Example of Use
+
+In the following example we enter the simple shell with the compilation code, then we compile with ./hsh and see what I enter `"Cisfun$"`, then we list the files `"ls"` and see the path `"pwd"` , then we exit and return to our default shell
+
+![](https://i.ibb.co/mrnMrhn/ejemplo1.png)
+
+
+### Bugs
+Perhaps several, however it is a project carried out in the learning process of software development, do not hesitate to contact the authors if you have any questions, thank you very much
+
+
+
 ## Authors:
-- [Valentina Zapata](https://github.com/Zapata9664 "Valentina Zapata") - [@Zapata9664](https://twitter.com/Zapata9664 "@Zapata9664")
+- [Valentina Zapata](https://github.com/ "Valentina Zapata") - [@Zapata9664](https://twitter.com/Zapata9664 "@Zapata9664")
 - [Eduardo Zúñiga](https://github.com/edwardzuniga/ "Eduardo Zúñiga") - [@eduzunigapro](https://twitter.com/eduzunigapro "@eduzunigapro")
