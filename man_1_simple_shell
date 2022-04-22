@@ -1,12 +1,12 @@
 .TH SIMPLE_SHELL "1" "April 21, 2022" "Simple Shell Manual Page"
 
 .SH NAME
-.B lsh 
+.B hsh 
 -Simple shell implementation of command line - Holberton Project
 .PP
 
 .SH SYNOPSIS
-.B ./lsh
+.B ./hsh
 .PP
 
 .SH Description
