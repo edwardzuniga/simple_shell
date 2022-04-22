@@ -61,7 +61,7 @@ $
 
 ## Steps to use the Shell
 
-###1. Clone the repository
+### 1. Clone the repository
 
 `$ git clone https://github.com/edwardzuniga/simple_shell.git`
 
